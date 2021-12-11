@@ -3,6 +3,9 @@
 export IMAGE_TAG=jenkins/jenkins:jdk11
 export SERVICE_NAME=jenkinsX
 
+mkdir -p /home/thanachai/jenkins/certs
+mkdir -p /home/thanachai/jenkins/home
+
 docker pull ${IMAGE_TAG}
 docker service scale ${SERVICE_NAME}=0
 docker service rm ${SERVICE_NAME}
