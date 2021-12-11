@@ -12,6 +12,7 @@ docker service rm ${SERVICE_NAME}
 docker service create --replicas 1 \
     --name ${SERVICE_NAME} \
     --publish published=5544,target=2376 \
+    --publish published=5545,target=8080 \
     --mount type=bind,src=/home/thanachai/jenkins/certs,dst=/certs/client \
     --mount type=bind,src=/home/thanachai/jenkins/home,dst=/var/jenkins_home \
     --env "DOCKER_TLS_CERTDIR=/certs" \
